@@ -1,12 +1,12 @@
 " Prevent the plugin from being loaded more than once
-if exists("g:loaded_nick_plugin")
+if exists("g:loaded_nickutil_plugin")
 	finish
 endif
 
-let g:loaded_nick_plugin = 1
+let g:loaded_nickutil_plugin = 1
 
 " expose the plugin's functions (written in nick/autoload/nick-autoload)
-command! -nargs=0 NickVersion call nick#NickVersion()
-command! -nargs=0 TLN call nick#TLN()
+command! -nargs=0 NickVersion call nickutil#VimNickUtilVersion()
+command! -nargs=0 TLN call nickutil#TLN()
 
-command! -nargs=0 LX call nick#LX()
+command! -nargs=0 LX call nickutil#LX()
