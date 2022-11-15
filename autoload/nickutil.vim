@@ -10,7 +10,7 @@ function! nickutil#TLN()
 		set number| " show line numbers
 		set relativenumber| " show relative line numbers 
 		let g:nickutil_ln_num_cycle = 1
-	elseif g:vim_nick_util_ln_num_cycle == 1
+	elseif g:nickutil_ln_num_cycle == 1
 		set number 
 		set norelativenumber
 		"set relativenumber!
@@ -46,3 +46,11 @@ function nickutil#WordCount()
     return g:nickutil_word_count
 endfunction
 
+" text file configure
+function g:nickutil#ConfigureTextualFile(spelllang)
+	"  enable spellchecking for this file
+	execute "set spell spelllang=" . a:spelllang
+	" remap k and j to move down buffer lines not file lines
+	noremap <buffer> <silent> k gk
+	noremap <buffer> <silent> j gj
+endfunction
